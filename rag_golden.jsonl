@@ -1,0 +1,56 @@
+{"question": "What should I do first when I discover a fire?", "expected_docs": ["KB01"], "must_contain": ["alarm"]}
+{"question": "Can I use the lift to get out during a fire?", "expected_docs": ["KB01", "KB04", "KB05"], "must_contain": ["lift"]}
+{"question": "Which number do I call to report a fire in the UK?", "expected_docs": ["KB01", "KB13", "KB16"], "must_contain": ["999"]}
+{"question": "Which extinguisher is safe on live electrical equipment?", "expected_docs": ["KB02", "KB07"], "must_contain": ["carbon dioxide"]}
+{"question": "What colour band does a wet chemical extinguisher have?", "expected_docs": ["KB02"], "must_contain": ["yellow"]}
+{"question": "What is a Class F fire?", "expected_docs": ["KB02", "KB09"], "must_contain": ["cooking"]}
+{"question": "Why should dry powder not be used in a small enclosed room?", "expected_docs": ["KB02"], "must_contain": ["visibility"]}
+{"question": "How do I operate a portable fire extinguisher?", "expected_docs": ["KB03"], "must_contain": ["base of the fire"]}
+{"question": "When is it acceptable for staff to tackle a fire themselves?", "expected_docs": ["KB03", "KB13", "KB01"], "must_contain": ["small"]}
+{"question": "Why must I not hold the horn of a CO2 extinguisher?", "expected_docs": ["KB03"], "must_contain": ["freeze burn"]}
+{"question": "What does a fire warden have to do during an evacuation?", "expected_docs": ["KB04"], "must_contain": ["sweep"]}
+{"question": "What is phased evacuation?", "expected_docs": ["KB04"], "must_contain": ["floor"]}
+{"question": "What should be reported to the fire service when they arrive?", "expected_docs": ["KB04", "KB01", "KB13"], "must_contain": ["missing"]}
+{"question": "What is a personal emergency evacuation plan?", "expected_docs": ["KB05"], "must_contain": ["PEEP"]}
+{"question": "Where should a wheelchair user wait if they cannot use the stairs?", "expected_docs": ["KB05"], "must_contain": ["refuge"]}
+{"question": "Whose responsibility is it to evacuate disabled people from a building?", "expected_docs": ["KB05", "KB12"], "must_contain": ["responsible person"]}
+{"question": "What is the most common cause of death in fires?", "expected_docs": ["KB06"], "must_contain": ["smoke"]}
+{"question": "What should I do if I am trapped by smoke and cannot reach an exit?", "expected_docs": ["KB06"], "must_contain": ["window"]}
+{"question": "How do I check whether it is safe to open a door during a fire?", "expected_docs": ["KB06"], "must_contain": ["back of your hand"]}
+{"question": "What should happen when the gas suppression warning sounds in the server room?", "expected_docs": ["KB07"], "must_contain": ["door"]}
+{"question": "Is it safe to use water on an electrical fire?", "expected_docs": ["KB07", "KB02"], "must_contain": ["water"]}
+{"question": "Should I reset a breaker on equipment that has been smoking?", "expected_docs": ["KB07"], "must_contain": ["breaker"]}
+{"question": "What are the warning signs of lithium battery thermal runaway?", "expected_docs": ["KB08"], "must_contain": ["swelling"]}
+{"question": "Can a portable extinguisher stop a lithium ion battery fire?", "expected_docs": ["KB08"], "must_contain": ["reignite"]}
+{"question": "What gas is given off by a burning lithium battery?", "expected_docs": ["KB08"], "must_contain": ["hydrogen fluoride"]}
+{"question": "Why must water never be put on a burning chip pan?", "expected_docs": ["KB09", "KB02"], "must_contain": ["steam"]}
+{"question": "How do I use a fire blanket on a pan fire?", "expected_docs": ["KB09"], "must_contain": ["blanket"]}
+{"question": "What should be done if fire gets into the kitchen extraction duct?", "expected_docs": ["KB09"], "must_contain": ["duct"]}
+{"question": "Should a burning gas leak be extinguished?", "expected_docs": ["KB10"], "must_contain": ["shut off"]}
+{"question": "What is the danger from gas cylinders heated by a fire?", "expected_docs": ["KB10"], "must_contain": ["rupture"]}
+{"question": "What does DSEAR require employers to do?", "expected_docs": ["KB10"], "must_contain": ["explosion"]}
+{"question": "What is the difference between category L and category P fire alarm systems?", "expected_docs": ["KB11"], "must_contain": ["property"]}
+{"question": "How often should the fire alarm be tested?", "expected_docs": ["KB11"], "must_contain": ["week"]}
+{"question": "Does video fire detection replace a conventional fire alarm system?", "expected_docs": ["KB11", "KB16"], "must_contain": ["supplement"]}
+{"question": "What is an aspirating smoke detector used for?", "expected_docs": ["KB11"], "must_contain": ["early warning"]}
+{"question": "Who is the responsible person under the Fire Safety Order?", "expected_docs": ["KB12"], "must_contain": ["employer"]}
+{"question": "Do small businesses have to write down their fire risk assessment?", "expected_docs": ["KB12"], "must_contain": ["record"]}
+{"question": "Who enforces fire safety law in workplaces?", "expected_docs": ["KB12"], "must_contain": ["fire and rescue authority"]}
+{"question": "What actions are required at the GROWING hazard level?", "expected_docs": ["KB13"], "must_contain": ["evacuation"]}
+{"question": "What should the operator do when PyraGuard raises a WATCH alert?", "expected_docs": ["KB13"], "must_contain": ["verify"]}
+{"question": "Should the sprinkler valve be closed once the fire looks under control?", "expected_docs": ["KB14"], "must_contain": ["sprinkler"]}
+{"question": "Why do fires spread so quickly in warehouse racking?", "expected_docs": ["KB14"], "must_contain": ["flues"]}
+{"question": "What should forklift drivers do when the fire alarm sounds in the warehouse?", "expected_docs": ["KB14"], "must_contain": ["forklift"]}
+{"question": "How long should a burn be cooled under running water?", "expected_docs": ["KB15"], "must_contain": ["20 minutes"]}
+{"question": "When can people go back into the building after a fire?", "expected_docs": ["KB15", "KB01", "KB13"], "must_contain": ["safe"]}
+{"question": "Which regulations require fires and dangerous occurrences to be reported?", "expected_docs": ["KB15"], "must_contain": ["Dangerous Occurrences"]}
+{"question": "Why do fire services not always attend automatic fire alarms?", "expected_docs": ["KB16"], "must_contain": ["false alarms"]}
+{"question": "What counts as a confirmed fire?", "expected_docs": ["KB16"], "must_contain": ["seen"]}
+{"question": "What should be done about equipment that is running abnormally hot but not yet burning?", "expected_docs": ["KB17"], "must_contain": ["isolator"]}
+{"question": "What causes electrical hot spots before a fire starts?", "expected_docs": ["KB17", "KB07"], "must_contain": ["connection"]}
+{"question": "What does FD30 mean on a fire door?", "expected_docs": ["KB18"], "must_contain": ["30 minutes"]}
+{"question": "Why must fire doors not be wedged open?", "expected_docs": ["KB18", "KB06"], "must_contain": ["smoke"]}
+{"question": "The blaze is in the battery store, what must staff avoid doing?", "expected_docs": ["KB08"], "must_contain": ["move"]}
+{"question": "There is haze near the ceiling but no flames, should we evacuate?", "expected_docs": ["KB06", "KB13"], "must_contain": ["smoke"]}
+{"question": "A deep fat fryer is alight, which extinguisher do we use?", "expected_docs": ["KB09", "KB02"], "must_contain": ["wet chemical"]}
+{"question": "Somebody is in a wheelchair on the first floor, how do we get them out?", "expected_docs": ["KB05"], "must_contain": ["refuge"]}

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 ANTHONY CHINEDU ECHEM
+Copyright (c) 2026 PyraGuard AI contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Third party notice: the optional Ultralytics dependency is distributed under
+AGPL 3.0 (or a commercial Ultralytics licence). Review its terms before
+shipping a product that bundles it.

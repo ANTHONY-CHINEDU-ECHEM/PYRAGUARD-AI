@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    command: ["pyraguard", "serve", "0.0.0.0", "8000"]
+    ports: ["8000:8000"]
+    env_file: [{path: .env, required: false}]
+    volumes:
+      - ./models:/app/models
+      - ./reports:/app/reports
+  dashboard:
+    build: .
+    command: ["pyraguard", "dashboard", "8501"]
+    ports: ["8501:8501"]
+    env_file: [{path: .env, required: false}]
+    volumes:
+      - ./models:/app/models

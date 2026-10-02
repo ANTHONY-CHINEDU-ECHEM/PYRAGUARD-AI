@@ -1,0 +1,66 @@
+# PyraGuard AI default configuration.
+# Every key is optional: anything left out falls back to the default in
+# src/pyraguard/config.py. Secrets (API keys, SMTP passwords) belong in the
+# environment, never in this file.
+
+vision:
+  detector: auto            # auto | heuristic | yolo | ensemble
+  process_width: 640
+  heuristic:
+    min_confidence: 0.60
+    smoke_enabled: true
+  yolo:
+    weights: models/pyraguard_yolo.pt
+    base_weights: yolo26s.pt
+    confidence: 0.30
+    image_size: 640
+    class_map: {0: smoke, 1: fire}   # DFire convention
+  thermal:
+    enabled: true
+    alarm_celsius: 80.0
+    ambient_margin_celsius: 35.0
+
+tracking:
+  window_seconds: 6.0
+  max_age_seconds: 1.5
+
+hazard:
+  weights:
+    fire_extent: 0.30
+    smoke_extent: 0.14
+    confidence: 0.14
+    growth: 0.18
+    persistence: 0.14
+    thermal: 0.10
+  thresholds: {watch: 8.0, incipient: 24.0, growing: 48.0, critical: 72.0}
+  confirm_seconds: 1.2
+  confirm_ratio: 0.6
+  clear_after_seconds: 20.0
+
+rag:
+  knowledge_dir: knowledge_base/documents
+  reference_image_dir: knowledge_base/reference_images
+  index_dir: storage/index
+  text_embedder: hashing     # hashing | sentence_transformers | open_clip
+  top_k: 6
+  plan_top_k: 10
+  min_support: 0.55
+
+llm:
+  provider: extractive       # extractive | anthropic | openai | ollama
+  model: ""
+  temperature: 0.0
+  vision_captions: false
+
+alerts:
+  channels: [console, jsonl]
+  min_level: INCIPIENT
+  cooldown_seconds: 30.0
+  jsonl_path: reports/incidents.jsonl
+
+evacuation:
+  site_file: configs/site_demo.yaml
+  walking_speed_mps: 1.2
+  assisted_speed_mps: 0.6
+  block_level: GROWING
+  caution_penalty: 4.0
