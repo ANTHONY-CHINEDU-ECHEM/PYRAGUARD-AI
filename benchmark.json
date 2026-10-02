@@ -1,0 +1,170 @@
+{
+  "note": "Measured on procedurally generated scenes with exact ground truth. Not a substitute for validation on real footage.",
+  "stills": {
+    "images": 1500,
+    "seed": 2026,
+    "iou_threshold": 0.3,
+    "detector": "heuristic",
+    "categories": {
+      "none": 683,
+      "smoke": 402,
+      "fire_and_smoke": 308,
+      "fire": 107
+    },
+    "fire": {
+      "ground_truth": 415,
+      "true_positives": 385,
+      "false_positives": 180,
+      "false_negatives": 30,
+      "precision": 0.6814,
+      "recall": 0.9277,
+      "f1": 0.7857,
+      "average_precision": 0.8956
+    },
+    "smoke": {
+      "ground_truth": 710,
+      "true_positives": 0,
+      "false_positives": 0,
+      "false_negatives": 710,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "average_precision": 0.0
+    },
+    "map": 0.4478,
+    "fire_recall_by_size": {
+      "tiny (under 0.3 percent of frame)": {
+        "found": 108,
+        "total": 117,
+        "recall": 0.9231
+      },
+      "small (0.3 to 1.5 percent)": {
+        "found": 184,
+        "total": 197,
+        "recall": 0.934
+      },
+      "medium and large (over 1.5 percent)": {
+        "found": 93,
+        "total": 101,
+        "recall": 0.9208
+      }
+    },
+    "image_level_fire": {
+      "true_positives": 403,
+      "false_positives": 144,
+      "true_negatives": 941,
+      "false_negatives": 12,
+      "accuracy": 0.896,
+      "precision": 0.7367,
+      "recall": 0.9711,
+      "f1": 0.8378,
+      "false_positive_rate": 0.1327
+    },
+    "false_boxes_per_negative_image": 0.2006,
+    "latency_ms": {
+      "median": 5.3,
+      "p95": 9.99
+    }
+  },
+  "clips": {
+    "clips": 60,
+    "seed": 2026,
+    "frames_per_clip": 90,
+    "fps": 10.0,
+    "ignition": {
+      "clips": 21,
+      "detected": 21,
+      "detection_rate": 1.0,
+      "median_seconds_to_confirm": 1.2,
+      "p90_seconds_to_confirm": 1.5,
+      "max_seconds_to_confirm": 2.6
+    },
+    "smoulder": {
+      "clips": 12,
+      "detected": 12,
+      "detection_rate": 1.0,
+      "median_seconds_to_confirm": 1.2,
+      "p90_seconds_to_confirm": 2.7,
+      "max_seconds_to_confirm": 4.9
+    },
+    "moving_hi_vis_negative": {
+      "clips": 21,
+      "false_incidents": 3,
+      "false_incident_rate": 0.1429,
+      "clips_with_any_raw_detection": 9,
+      "raw_alarm_rate": 0.4286
+    },
+    "light_flash_negative": {
+      "clips": 6,
+      "false_incidents": 0,
+      "false_incident_rate": 0.0,
+      "clips_with_any_raw_detection": 6,
+      "raw_alarm_rate": 1.0
+    },
+    "overall": {
+      "positive_clips": 33,
+      "detection_rate": 1.0,
+      "negative_clips": 27,
+      "false_incident_rate_confirmed": 0.1111,
+      "false_alarm_rate_single_frame": 0.5556
+    },
+    "ignition_peak_levels": {
+      "GROWING": 17,
+      "CRITICAL": 4
+    },
+    "growth_estimate_median_relative_error": 0.1272,
+    "latency_ms": {
+      "median": 18.04,
+      "p95": 25.29
+    }
+  },
+  "thermal": {
+    "alarm_celsius": 80.0,
+    "ambient_margin_celsius": 35.0,
+    "rows": [
+      {
+        "hot_spot_celsius": null,
+        "frames": 60,
+        "flagged_rate": 0.0,
+        "above_alarm_rate": 0.0
+      },
+      {
+        "hot_spot_celsius": 45.0,
+        "frames": 60,
+        "flagged_rate": 0.0,
+        "above_alarm_rate": 0.0
+      },
+      {
+        "hot_spot_celsius": 60.0,
+        "frames": 60,
+        "flagged_rate": 0.0,
+        "above_alarm_rate": 0.0
+      },
+      {
+        "hot_spot_celsius": 75.0,
+        "frames": 60,
+        "flagged_rate": 1.0,
+        "above_alarm_rate": 0.0
+      },
+      {
+        "hot_spot_celsius": 100.0,
+        "frames": 60,
+        "flagged_rate": 1.0,
+        "above_alarm_rate": 1.0
+      },
+      {
+        "hot_spot_celsius": 180.0,
+        "frames": 60,
+        "flagged_rate": 1.0,
+        "above_alarm_rate": 1.0
+      },
+      {
+        "hot_spot_celsius": 300.0,
+        "frames": 60,
+        "flagged_rate": 1.0,
+        "above_alarm_rate": 1.0
+      }
+    ]
+  },
+  "runtime_seconds": 242.3
+}

@@ -1,0 +1,308 @@
+{
+  "corpus": {
+    "documents": 18,
+    "chunks": 81,
+    "action_chunks": 23,
+    "prohibition_chunks": 17,
+    "context_chunks": 41,
+    "words": 5912,
+    "embedder": "hashing"
+  },
+  "retrieval": {
+    "dense": {
+      "hit_at_1": 0.8393,
+      "hit_at_3": 0.9286,
+      "hit_at_5": 0.9464,
+      "mrr": 0.8884
+    },
+    "lexical": {
+      "hit_at_1": 0.9107,
+      "hit_at_3": 0.9821,
+      "hit_at_5": 1.0,
+      "mrr": 0.9411
+    },
+    "hybrid": {
+      "hit_at_1": 0.9107,
+      "hit_at_3": 0.9464,
+      "hit_at_5": 1.0,
+      "mrr": 0.9372
+    }
+  },
+  "answers": {
+    "questions": 56,
+    "answer_contains_expected_fact": 0.875,
+    "answers_with_valid_citations": 1.0,
+    "median_latency_ms": 1.77,
+    "failures": [
+      "How do I operate a portable fire extinguisher?",
+      "Whose responsibility is it to evacuate disabled people from a building?",
+      "What should I do if I am trapped by smoke and cannot reach an exit?",
+      "What gas is given off by a burning lithium battery?",
+      "Who is the responsible person under the Fire Safety Order?",
+      "The blaze is in the battery store, what must staff avoid doing?",
+      "Somebody is in a wheelchair on the first floor, how do we get them out?"
+    ],
+    "provider": "extractive"
+  },
+  "scenarios": {
+    "scenarios": 13,
+    "summary": {
+      "cites_expected_documents": 1.0,
+      "includes_required_actions": 1.0,
+      "includes_required_prohibitions": 1.0,
+      "excludes_unsafe_advice": 1.0,
+      "every_line_cited": 1.0,
+      "passed": 1.0,
+      "mean_groundedness": 1.0
+    },
+    "rows": [
+      {
+        "id": "kitchen_incipient",
+        "level": "INCIPIENT",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB02",
+          "KB09",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "kitchen_growing",
+        "level": "GROWING",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB09",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "server_incipient",
+        "level": "INCIPIENT",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB07",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "server_hotspot_watch",
+        "level": "WATCH",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB13",
+          "KB17"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "charging_incipient",
+        "level": "INCIPIENT",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB08",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "charging_critical",
+        "level": "CRITICAL",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB08",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "warehouse_growing",
+        "level": "GROWING",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB13",
+          "KB14"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "warehouse_critical",
+        "level": "CRITICAL",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB13",
+          "KB14"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "office_incipient",
+        "level": "INCIPIENT",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB03",
+          "KB04",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "office_smoke_watch",
+        "level": "WATCH",
+        "actions": 4,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "plant_hotspot_watch",
+        "level": "WATCH",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB13",
+          "KB17"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "chemical_incipient",
+        "level": "INCIPIENT",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB02",
+          "KB10",
+          "KB13"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      },
+      {
+        "id": "corridor_smoke_growing",
+        "level": "GROWING",
+        "actions": 10,
+        "prohibitions": 6,
+        "groundedness": 1.0,
+        "cited_documents": [
+          "KB01",
+          "KB06",
+          "KB13",
+          "KB18"
+        ],
+        "cites_expected_documents": true,
+        "includes_required_actions": true,
+        "includes_required_prohibitions": true,
+        "excludes_unsafe_advice": true,
+        "every_line_cited": true,
+        "passed": true
+      }
+    ]
+  },
+  "image_leg": {
+    "samples": 300,
+    "reference_images": 20,
+    "matched_above_threshold": 0.5833,
+    "top1_scene_accuracy": 0.6514,
+    "top1_hazard_presence_agreement": 0.6686
+  }
+}
