@@ -4,17 +4,17 @@
 
 PyraGuard AI watches camera feeds for flame, smoke and abnormal heat, confirms a hazard over time rather than on a single frame, and then answers the question an alarm never answers: what should the people on site do right now. Every instruction it issues is retrieved from a reviewed fire safety knowledge base and carries a citation to its source.
 
-![PyraGuard architecture](docs/images/architecture.png)
+![PyraGuard architecture](architecture.png)
 
 ## Project Brief
 
 Fire is a problem of time. A fire in ordinary furnishings or packaging can double in size in well under a minute once it takes hold, which means the value of a detection system is set almost entirely by how early it speaks. Conventional point detectors speak late by design: they sit on the ceiling and wait for smoke or heat to reach them. In a tall warehouse or an atrium, smoke can cool and spread out below the roof before it ever arrives at a detector, while conditions at floor level still look normal. Yet most commercial buildings already have cameras looking directly at the places where fires start. A camera sees the flame at its source, in the first seconds, wherever it is in view. That unused field of view is the opportunity this project addresses.
 
-Detection, however, is only half of the problem, and arguably the easier half. When an alarm sounds, the person in the control room has seconds to decide what to tell people, and the correct answer depends on details that are easy to get wrong under stress. Water thrown on burning cooking oil produces a fireball. Water or foam on live electrical equipment risks electric shock. A lithium ion battery in thermal runaway must not be picked up and carried outside. A burning gas leak should not be extinguished unless the supply can be shut off. The guidance that covers these cases exists, in standards, government guides and site emergency plans, but it lives in binders and PDF files that nobody opens during an emergency. A general purpose language model can produce fluent advice in an instant, but fluent is not the same as correct, and an invented instruction in a fire is not an acceptable failure.
+Detection, however, is only half of the problem, and arguably the easier half. When an alarm sounds, the person in the control room has seconds to decide what to tell people, and the correct answer depends on details that are easy to get wrong under stress. Water thrown on burning cooking oil produces a fireball. Water or foam on live electrical equipment risks electric shock. A lithium ion battery in thermal runaway must not be picked up and carried outside. A burning gas leak should not be extinguished unless the supply can be shut off. The guidance that covers these cases exists, in standards, government guides and site emergency plans, but it lives in binders and PDFs files that nobody opens during an emergency. A general purpose language model can produce fluent advice in an instant, but fluent is not the same as correct, and an invented instruction in a fire is not an acceptable failure.
 
-There is a third pressure, which is trust. Most automatic fire alarm signals from commercial premises are false alarms, and several fire and rescue services in the United Kingdom no longer send an automatic response to many non residential premises unless a person has confirmed the fire. A vision system that raises an alert every time a hi vis jacket walks past a warm lamp will be muted within a week, and a muted system protects nobody. Any serious design therefore has to treat false alarms as a first class failure, and has to give the operator a picture and a reason, not just a siren.
+There is a third pressure, which is trust. Most automatic fire alarm signals from commercial premises are false alarms, and several fire and rescue services in the United Kingdom no longer send an automatic response to many non residential premises unless a person has confirmed the fire. A vision system that raises an alarm every time a hi vis jacket walks past a warm lamp will be muted within a week, and a muted system protects nobody. Any serious design therefore has to treat false alarms as a first class failure, and has to give the operator a picture and a reason, not just a siren.
 
-PyraGuard AI is an end to end answer to those three pressures. A vision layer finds flame, smoke and thermal hot spots. A temporal layer tracks each region and measures whether it persists, flickers, grows or merely drifts past, so that an incident is confirmed by behaviour over about a second rather than by one bright frame. A hazard layer converts that evidence into a score and one of five levels. When the level changes, a multimodal retrieval layer turns the scene (what was seen, in which kind of room, with which materials, at which level, plus the frame itself) into queries against a fire safety knowledge base, and a grounded generation layer composes a response plan in which every line cites the passage it came from. Finally a routing layer computes evacuation routes over the site plan that avoid the affected zone. The whole pipeline runs on one CPU core with no API key; a trained YOLO detector, neural embeddings and a hosted or local language model are optional upgrades behind the same interfaces.
+PyraGuard AI is an end to end answer to those three pressures. A vision layer finds flame, smoke and thermal hot spots. A temporal layer tracks each region and measures whether it persists, flickers, grows or merely drifts past, so that an incident is confirmed by behaviour over about a second rather than by one bright frame. A hazard layer converts that evidence into a score and one of five levels. When the level changes, a multimodal retrieval layer turns the scene (what was seen, in which kind of room, with which materials, at which level, plus the frame itself) into queries against a fire safety knowledge base, and a grounded generation layer composes a response plan in which every line cites the passage it came from. Finally a routing layer computes evacuation routes over the site plan that avoid the affected zone. The whole pipeline runs on one CPU core with no API key; a trained YOLO detector, neural embedders and a hosted or local language model are optional upgrades behind the same interface.
 
 This repository contains the complete codebase, an original knowledge base of 18 guidance documents, a reproducible benchmark with exact ground truth, an evaluation harness for the knowledge layer, a REST API, an operator dashboard and 47 automated tests. The findings below are measured, not estimated, and the section on limitations states plainly what was not measured.
 
@@ -58,7 +58,7 @@ The design reasoning for each stage is written up in [docs/architecture.md](docs
 <tr><td><b>Total</b></td><td><b>21,527</b></td><td></td><td><b>Total</b></td><td><b>26,557</b></td></tr>
 </table>
 
-Nearly half of the images contain no hazard at all, which is exactly what a detector needs in order to learn restraint. The dataset is published at [github.com/gaiasd/DFireDataset](https://github.com/gaiasd/DFireDataset). It is not redistributed here; `make audit` checks a downloaded copy for missing labels, malformed rows and out of range boxes and reports the class balance and box size distribution before any training starts.
+Nearly half of the images contain no hazard at all, which is exactly what a detector needs in order to learn restraint. The dataset is published at [github.com/gaiasd/DFireDataset](https://github.com/gaiasd/DFireDataset).
 
 **The knowledge base.** Eighteen original guidance documents, about 7,200 words, split into 81 chunks: 23 action chunks, 17 prohibition chunks and 41 context chunks. They cover first actions, fire classes and extinguisher choice, extinguisher use, evacuation and warden duties, assisted evacuation, smoke, electrical and server room fires, lithium ion batteries, cooking oil, flammable liquids and gas cylinders, detection systems, legal duties, warehouse fires, post incident care, alarm verification, overheating equipment, fire doors, and a site escalation matrix that defines the response expected at each hazard level. Each document names the standard or official guidance it summarises.
 
@@ -68,23 +68,23 @@ Nearly half of the images contain no hazard at all, which is exactly what a dete
 
 **Single frame analysis.** Six generated scenes analysed by the classical detector with no trained weights. Small flames are found in the kitchen, server room, corridor and office. The warehouse panel shows a true detection and, beside it, a false candidate on a lamp glow, which is the characteristic weakness of colour rules that the findings quantify. The last panel is a hard negative that is correctly left clear.
 
-![Detection examples](docs/images/detection_examples.jpg)
+![Detection examples](detection_examples.jpg)
 
 **An incident from ignition to escalation.** A flame appears at 2.9 seconds. The score rises as the region persists and grows, the incident is confirmed 1.2 seconds after ignition, and it escalates as smoke builds. A response plan is issued at each state change.
 
-![Incident timeline](docs/images/incident_timeline.jpg)
+![Incident timeline](incident_timeline.jpg)
 
 **The response plan issued when that incident opened.** The first lines come from the site escalation matrix for the confirmed level, the next from the cooking oil procedure for this room, and each line shows the chunk it was taken from. Note the prohibitions: never water on burning oil, and no carbon dioxide, water or foam extinguisher on it either.
 
-![Response plan](docs/images/response_plan.png)
+![Response plan](response_plan.png)
 
 **Evacuation routing.** With the Main Warehouse at the growing level, every route avoids it. The first floor is sent down Stair B to the rear exit, and the open plan office is told that anyone who cannot use the stairs waits in the refuge.
 
-![Evacuation routes](docs/images/evacuation_routes.png)
+![Evacuation routes](evacuation_routes.png)
 
 **The thermal channel.** Normal equipment is clear, a surface at 95 degrees Celsius is a watch, and a surface at 240 degrees is treated as an incipient hazard because ignition may be imminent.
 
-![Thermal hot spots](docs/images/thermal_hotspots.jpg)
+![Thermal hot spots](thermal_hotspots.jpg)
 
 ## Detailed Findings
 
@@ -104,7 +104,7 @@ All numbers come from `reports/benchmark.json` and `reports/rag_eval.json`, whic
 <tr><td>Extractive answers containing the expected fact</td><td>87.5 percent, all with valid citations</td></tr>
 </table>
 
-![Benchmark results](docs/images/benchmark_results.png)
+![Benchmark results](benchmark_results.png)
 
 **1. Temporal confirmation removes four out of five false alarms without losing a single fire.** On the 27 hard negative clips, 15 produced at least one fire or smoke candidate on some frame. A system that alarmed on any single frame would have raised a false alarm on 56 percent of them. PyraGuard confirmed an incident on 3, or 11 percent, and still confirmed all 33 real fires. All six clips containing a half second warm flash produced raw candidates and none became an incident. This is the single most important result in the project: the reliability of the system comes from reasoning about time, not from the detector alone.
 
@@ -118,9 +118,9 @@ All numbers come from `reports/benchmark.json` and `reports/rag_eval.json`, whic
 
 **6. The thermal channel responds before ignition and stays quiet below it.** No frame with a surface at or below 60 degrees Celsius was flagged. Every frame at 75 degrees was flagged as a watch, and every frame at 100 degrees or more was above the alarm temperature.
 
-![RAG evaluation](docs/images/rag_evaluation.png)
+![RAG evaluation](rag_evaluation.png)
 
-**7. On a small, well written corpus, lexical matching is as strong as fusion.** Hybrid retrieval placed a correct document first for 91 percent of the golden questions and within the top five for all of them (MRR 0.94). BM25 alone matched that (MRR 0.94), while the hashing dense leg trailed (MRR 0.89). The honest reading is that fusion adds little here because the questions share vocabulary with the guidance; its value is as insurance against paraphrase, which is where the optional neural embedders earn their cost.
+**7. On a small, well written corpus, lexical matching is as strong as fusion.** Hybrid retrieval placed a correct document first for 91 percent of the golden questions and within the top five for all of them. BM25 alone matched that, while the hashing dense leg trailed (MRR 0.89). The honest reading is that fusion adds little here because the questions share vocabulary with the guidance; its value is as insurance against paraphrase, which is where the optional neural embedders earn their cost.
 
 **8. Evaluation caught an unsafe gap that retrieval metrics could not see.** The first version of the planner cited the right documents in every one of the 13 incident scenarios, yet only 6 plans passed all checks: 38 percent were missing a mandatory prohibition such as never using water on burning oil. The right document had been retrieved, but its prohibition section had been cut by the result limit. Adding procedure completion (when the actions of a procedure are retrieved, its prohibitions are fetched too, and the reverse) together with tiered selection took the pass rate to 13 of 13. Retrieval accuracy and plan safety are different properties and need different tests.
 
@@ -262,14 +262,14 @@ Interactive documentation is served at `/docs` once the API is running.
 
 ## Testing and Quality
 
-`make test` runs 47 tests in under ten seconds. They cover geometry and schemas, the scene generator, each detector, the tracker and growth estimation, severity scoring and its vetoes, the incident lifecycle, chunking, embeddings, the vector store, retrieval, stage gating, verification of language model output with a deliberately dishonest fake model, fallback on unusable output, routing (blocked zones, lifts, trapped zones, refuges), the engine end to end, alert dispatch, every API endpoint and the command line. `make lint` runs Ruff, and the GitHub Actions workflow runs lint, tests and the knowledge layer regression on every push.
+`make test` runs 47 tests in under ten seconds. They cover geometry and schemas, the scene generator, each detector, the tracker and growth estimation, severity scoring and its vetoes, the incident lifecycle, chunking, embeddings, the vector store, retrieval, stage gating, verification of language model output with a deliberately dishonest fake model, fallback on unable outputs, routing (blocked zones, lifts, trapped zones, refuges), the engine end to end, alert dispatch, every API endpoint and the command line. `make lint` runs Ruff, and the GitHub Actions workflow runs lint, tests and the knowledge layer regression on every push.
 
 ## Limitations and Responsible Use
 
 * **No trained detector was evaluated.** The DFire images could not be downloaded in the build environment and no GPU was available, so the YOLO path was written and reviewed but never executed here. No DFire accuracy is claimed. The OpenCLIP, Sentence Transformers and hosted language model paths are likewise untested in this build.
-* **The vision findings come from generated scenes.** They validate the logic of the pipeline with exact ground truth. They are not evidence of performance on real fires, and thresholds such as the smoke churn ratio will need retuning on real footage.
+* **The vision findings come from generated scenes.** They validate the logic of the pipeline with exact ground truth. They are not evidence of performance on real fires, and thresholds such as the smoke churn ratio will need returning on real footage.
 * **The evaluation sets are a regression suite.** The golden questions and incident scenarios were written alongside the knowledge base and used during development, so their pass rates show that known requirements are met, not how the system generalises.
-* **The knowledge base needs professional review.** It is an original summary corpus written for this project from United Kingdom guidance and standards. It has not been reviewed by a fire safety professional and must be before any real use.
+* **The knowledge base needs professional review.** It is an original summary corpus written for this project from United Kingdom guidance and standards. It has not been reviewed by a fire safety professional and must be revised before any real use.
 * **This is decision support, not a life safety system.** PyraGuard supplements a fire detection and alarm system designed and maintained to the applicable standard. It does not replace one, and it does not replace the fire risk assessment or emergency plan that the law requires.
 
 ## Roadmap
