@@ -1,0 +1,206 @@
+[
+  {
+    "file": "ref_office_small_fire.jpg",
+    "scene": "office",
+    "variant": "small_fire",
+    "caption": "A small flame at an early stage in an office, no smoke layer yet.",
+    "tags": [
+      "general"
+    ]
+  },
+  {
+    "file": "ref_office_large_fire.jpg",
+    "scene": "office",
+    "variant": "large_fire",
+    "caption": "A large flame with a rising smoke plume in an office.",
+    "tags": [
+      "general",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_office_smoke_only.jpg",
+    "scene": "office",
+    "variant": "smoke_only",
+    "caption": "Grey smoke with no visible flame in an office, consistent with a smouldering source.",
+    "tags": [
+      "general",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_office_clear.jpg",
+    "scene": "office",
+    "variant": "clear",
+    "caption": "A normal view of an office with no flame or smoke.",
+    "tags": []
+  },
+  {
+    "file": "ref_warehouse_small_fire.jpg",
+    "scene": "warehouse",
+    "variant": "small_fire",
+    "caption": "A small flame at an early stage in a warehouse with racked goods, no smoke layer yet.",
+    "tags": [
+      "packaging",
+      "racking",
+      "sprinklers",
+      "warehouse"
+    ]
+  },
+  {
+    "file": "ref_warehouse_large_fire.jpg",
+    "scene": "warehouse",
+    "variant": "large_fire",
+    "caption": "A large flame with a rising smoke plume in a warehouse with racked goods.",
+    "tags": [
+      "packaging",
+      "racking",
+      "smoke",
+      "sprinklers",
+      "warehouse"
+    ]
+  },
+  {
+    "file": "ref_warehouse_smoke_only.jpg",
+    "scene": "warehouse",
+    "variant": "smoke_only",
+    "caption": "Grey smoke with no visible flame in a warehouse with racked goods, consistent with a smouldering source.",
+    "tags": [
+      "packaging",
+      "racking",
+      "smoke",
+      "sprinklers",
+      "warehouse"
+    ]
+  },
+  {
+    "file": "ref_warehouse_clear.jpg",
+    "scene": "warehouse",
+    "variant": "clear",
+    "caption": "A normal view of a warehouse with racked goods with no flame or smoke.",
+    "tags": []
+  },
+  {
+    "file": "ref_kitchen_small_fire.jpg",
+    "scene": "kitchen",
+    "variant": "small_fire",
+    "caption": "A small flame at an early stage in a kitchen, no smoke layer yet.",
+    "tags": [
+      "class_f",
+      "cooking_oil",
+      "kitchen"
+    ]
+  },
+  {
+    "file": "ref_kitchen_large_fire.jpg",
+    "scene": "kitchen",
+    "variant": "large_fire",
+    "caption": "A large flame with a rising smoke plume in a kitchen.",
+    "tags": [
+      "class_f",
+      "cooking_oil",
+      "kitchen",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_kitchen_smoke_only.jpg",
+    "scene": "kitchen",
+    "variant": "smoke_only",
+    "caption": "Grey smoke with no visible flame in a kitchen, consistent with a smouldering source.",
+    "tags": [
+      "class_f",
+      "cooking_oil",
+      "kitchen",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_kitchen_clear.jpg",
+    "scene": "kitchen",
+    "variant": "clear",
+    "caption": "A normal view of a kitchen with no flame or smoke.",
+    "tags": []
+  },
+  {
+    "file": "ref_server_room_small_fire.jpg",
+    "scene": "server_room",
+    "variant": "small_fire",
+    "caption": "A small flame at an early stage in a server room with equipment cabinets, no smoke layer yet.",
+    "tags": [
+      "electrical",
+      "gaseous_suppression",
+      "server_room"
+    ]
+  },
+  {
+    "file": "ref_server_room_large_fire.jpg",
+    "scene": "server_room",
+    "variant": "large_fire",
+    "caption": "A large flame with a rising smoke plume in a server room with equipment cabinets.",
+    "tags": [
+      "electrical",
+      "gaseous_suppression",
+      "server_room",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_server_room_smoke_only.jpg",
+    "scene": "server_room",
+    "variant": "smoke_only",
+    "caption": "Grey smoke with no visible flame in a server room with equipment cabinets, consistent with a smouldering source.",
+    "tags": [
+      "electrical",
+      "gaseous_suppression",
+      "server_room",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_server_room_clear.jpg",
+    "scene": "server_room",
+    "variant": "clear",
+    "caption": "A normal view of a server room with equipment cabinets with no flame or smoke.",
+    "tags": []
+  },
+  {
+    "file": "ref_corridor_small_fire.jpg",
+    "scene": "corridor",
+    "variant": "small_fire",
+    "caption": "A small flame at an early stage in a corridor escape route, no smoke layer yet.",
+    "tags": [
+      "evacuation",
+      "fire_doors"
+    ]
+  },
+  {
+    "file": "ref_corridor_large_fire.jpg",
+    "scene": "corridor",
+    "variant": "large_fire",
+    "caption": "A large flame with a rising smoke plume in a corridor escape route.",
+    "tags": [
+      "evacuation",
+      "fire_doors",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_corridor_smoke_only.jpg",
+    "scene": "corridor",
+    "variant": "smoke_only",
+    "caption": "Grey smoke with no visible flame in a corridor escape route, consistent with a smouldering source.",
+    "tags": [
+      "evacuation",
+      "fire_doors",
+      "smoke"
+    ]
+  },
+  {
+    "file": "ref_corridor_clear.jpg",
+    "scene": "corridor",
+    "variant": "clear",
+    "caption": "A normal view of a corridor escape route with no flame or smoke.",
+    "tags": []
+  }
+]
