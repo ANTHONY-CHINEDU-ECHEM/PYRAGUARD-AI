@@ -4,7 +4,8 @@
 
 PyraGuard AI watches camera feeds for flame, smoke and abnormal heat, confirms a hazard over time rather than on a single frame, and then answers the question an alarm never answers: what should the people on site do right now. Every instruction it issues is retrieved from a reviewed fire safety knowledge base and carries a citation to its source.
 
-![PyraGuard architecture](architecture.png)
+<img width="1761" height="893" alt="PyraGuard AI Response Workflow" src="https://github.com/user-attachments/assets/6422ef42-5722-4502-aeef-b22489b0d62d" />
+
 
 ## Project Brief
 
